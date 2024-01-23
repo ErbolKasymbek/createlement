@@ -65,19 +65,22 @@ btn.style.fontWeight = "bold";
 body.appendChild(btn);
 
 let clone = "start";
-console.log("clone variable's value before click: " + clone);
+console.log("clone variable's value before button click: " + clone);
 
 btn.addEventListener("click", getList);
 
-function getList() {
-  if (clone === "start") {
-    for (let i = 0; i < users.length; i++) {
-      let clone = li.cloneNode(true);
-      ul.appendChild(clone);
-      clone.innerText = users[i];
-    }
+function getList(e) {
+  if (e.type === "click") {
+    if (clone === "start") {
+      for (let i = 0; i < users.length; i++) {
+        let clone = li.cloneNode(true);
+        ul.appendChild(clone);
+        clone.innerText = users[i];
+      }
 
-    clone = "end";
+      clone = "end";
+    }
   }
-  console.log("clone variable's value after click: " + clone);
+
+  console.log("clone variable's value after button click: " + clone);
 }
