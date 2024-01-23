@@ -93,7 +93,9 @@ function getList(e) {
     function showClickMessage(e) {
       if (e.type === "click") {
         if (ul.children.length === users.length) {
-          console.log("Sorry, there is no more users left to add to the list");
+          console.log(
+            "Sorry, there is no more users left to add into the list"
+          );
         }
       }
     }
