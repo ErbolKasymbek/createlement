@@ -78,12 +78,13 @@ function getList(e) {
         clone.innerText = users[i];
         count = i;
       }
-
-      clone = "end";
     }
   }
 
-  console.log("clone variable's value after button click: " + clone);
+  if (clone === "start") {
+    clone = "end";
+    console.log("clone variable's value after button click: " + clone);
+  }
 
   if (clone === "end") {
     btn.addEventListener("click", showClickMessage);
