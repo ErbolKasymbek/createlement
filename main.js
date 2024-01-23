@@ -83,8 +83,6 @@ function getList(e) {
     }
   }
 
-  btn.removeEventListener("click", getList);
-
   console.log("clone variable's value after button click: " + clone);
 
   if (clone === "end") {
