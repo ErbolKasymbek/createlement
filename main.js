@@ -54,10 +54,20 @@ const users = [
   "Fin",
 ];
 
-for (let i = 0; i < users.length; i++) {
-  li.style.backgroundColor = "cyan";
-  li.style.marginBottom = "5px";
-  let clone = li.cloneNode(true);
-  ul.appendChild(clone);
-  clone.innerText = users[i];
-}
+const btn = document.createElement("button");
+btn.innerText = "get names";
+btn.style.paddingBlock = "10px";
+btn.style.paddingInline = "20px";
+btn.style.fontSize = "18px";
+btn.style.fontWeight = "bold";
+body.appendChild(btn);
+
+btn.addEventListener("click", () => {
+  for (let i = 0; i < users.length; i++) {
+    li.style.backgroundColor = "cyan";
+    li.style.marginBottom = "5px";
+    let clone = li.cloneNode(true);
+    ul.appendChild(clone);
+    clone.innerText = users[i];
+  }
+});
