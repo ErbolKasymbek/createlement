@@ -88,9 +88,9 @@ function getList(e) {
   console.log("clone variable's value after button click: " + clone);
 
   if (clone === "end") {
-    btn.addEventListener("click", stopClick);
+    btn.addEventListener("click", showClickMessage);
 
-    function stopClick(e) {
+    function showClickMessage(e) {
       if (e.type === "click") {
         if (ul.children.length === users.length) {
           console.log("Sorry, there is no more users left to add to the list");
