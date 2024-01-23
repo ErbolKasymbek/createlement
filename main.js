@@ -76,11 +76,26 @@ function getList(e) {
         let clone = li.cloneNode(true);
         ul.appendChild(clone);
         clone.innerText = users[i];
+        count = i;
       }
 
       clone = "end";
     }
   }
 
+  btn.removeEventListener("click", getList);
+
   console.log("clone variable's value after button click: " + clone);
+
+  if (clone === "end") {
+    btn.addEventListener("click", stopClick);
+
+    function stopClick(e) {
+      if (e.type === "click") {
+        if (ul.children.length === users.length) {
+          console.log("Sorry, there is no more users left to add to the list");
+        }
+      }
+    }
+  }
 }
