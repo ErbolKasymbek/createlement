@@ -1,3 +1,6 @@
+const uni = document.querySelector("*");
+uni.style.boxSizing = "border-box";
+
 const div = document.createElement("div");
 div.textContent = "This DIV element appended into BODY element";
 div.setAttribute("class", "container");
@@ -35,7 +38,7 @@ ul.style.maxWidth = "20rem";
 ul.style.width = "100%";
 ul.style.listStyleType = "none";
 ul.style.paddingLeft = "0";
-li.style.padding = "10px 10px 10px 0";
+li.style.padding = "10px 5px 10px 5px";
 body.appendChild(ul);
 
 // const list_item = document.querySelector(".list-item");
@@ -54,7 +57,6 @@ const users = [
 for (let i = 0; i < users.length; i++) {
   li.style.backgroundColor = "cyan";
   li.style.marginBottom = "5px";
-  li.style.paddingInline = "5px";
   let clone = li.cloneNode(true);
   ul.appendChild(clone);
   clone.innerText = users[i];
