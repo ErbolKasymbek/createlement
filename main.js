@@ -39,6 +39,8 @@ ul.style.width = "100%";
 ul.style.listStyleType = "none";
 ul.style.paddingLeft = "0";
 li.style.padding = "10px 5px 10px 5px";
+li.style.backgroundColor = "cyan";
+li.style.marginBottom = "5px";
 body.appendChild(ul);
 
 // const list_item = document.querySelector(".list-item");
@@ -62,12 +64,20 @@ btn.style.fontSize = "18px";
 btn.style.fontWeight = "bold";
 body.appendChild(btn);
 
-btn.addEventListener("click", () => {
-  for (let i = 0; i < users.length; i++) {
-    li.style.backgroundColor = "cyan";
-    li.style.marginBottom = "5px";
-    let clone = li.cloneNode(true);
-    ul.appendChild(clone);
-    clone.innerText = users[i];
+let clone = "start";
+console.log("clone variable's value before click: " + clone);
+
+btn.addEventListener("click", getList);
+
+function getList() {
+  if (clone === "start") {
+    for (let i = 0; i < users.length; i++) {
+      let clone = li.cloneNode(true);
+      ul.appendChild(clone);
+      clone.innerText = users[i];
+    }
+
+    clone = "end";
   }
-});
+  console.log("clone variable's value after click: " + clone);
+}
